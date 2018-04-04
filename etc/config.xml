@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <hutkigrosh_gateway>
+                <debug>1</debug>
+                <active>0</active>
+                <title>Hutkigrosh</title>
+                <model>HutkigroshPaymentGatewayFacade</model>
+                <order_status>pending_payment</order_status>
+                <hutkigrosh_shop_name>Your shop name</hutkigrosh_shop_name>
+                <hutkigrosh_hg_login/>
+                <hutkigrosh_hg_password/>
+                <hutkigrosh_erip_id/>
+                <hutkigrosh_sandbox>1</hutkigrosh_sandbox>
+                <hutkigrosh_notification_email>1</hutkigrosh_notification_email>
+                <hutkigrosh_notification_sms>0</hutkigrosh_notification_sms>
+                <hutkigrosh_completion_text/>
+                <hutkigrosh_bill_status_pending>pending_payment</hutkigrosh_bill_status_pending>
+                <hutkigrosh_bill_status_payed>pending_payment</hutkigrosh_bill_status_payed>
+                <hutkigrosh_bill_status_failed>pending_payment</hutkigrosh_bill_status_failed>
+                <hutkigrosh_bill_status_canceled>pending_payment</hutkigrosh_bill_status_canceled>
+                <sort_order>1</sort_order>
+            </hutkigrosh_gateway>
+        </payment>
+    </default>
+</config>
