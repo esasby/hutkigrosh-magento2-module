@@ -1,6 +1,6 @@
 {
-  "name": "magento/module-hutkigrosh-payment-gateway",
-  "description": "Hutkigrosh payment gateway integration",
+  "name": "esas/hutkigrosh-magento2-module",
+  "description": "Hutkigrosh magento2 payment gateway integration",
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0",
     "magento/module-sales": "100.0.*",
@@ -8,10 +8,9 @@
     "magento/module-payment": "100.0.*",
     "magento/framework": "100.0.*",
     "magento/magento-composer-installer": "100.0.*",
-    "esas/hutkigrosh-api-php": "~1.0"
+    "esas/hutkigrosh-api-php": "dev-master"
   },
   "type": "magento2-module",
-  "version": "100.0.3",
   "authors": [
     {
       "name": "esas",
@@ -19,16 +18,13 @@
       "homepage": "https://hutkigrosh.by"
     }
   ],
-  "license": [
-    "OSL-3.0",
-    "AFL-3.0"
-  ],
+  "license": "MIT",
   "autoload": {
     "files": [
       "registration.php"
     ],
     "psr-4": {
-      "Magento\\HutkigroshPaymentGateway\\": ""
+      "Esas\\Hutkigrosh\\": ""
     }
   }
 }

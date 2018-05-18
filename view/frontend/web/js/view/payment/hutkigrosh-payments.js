@@ -14,8 +14,8 @@ define(
         'use strict';
         rendererList.push(
             {
-                type: 'sample_gateway',
-                component: 'Magento_SamplePaymentGateway/js/view/payment/method-renderer/sample_gateway'
+                type: 'esas_hutkigrosh',
+                component: 'Esas_Hutkigrosh/js/view/payment/method-renderer/hutkigrosh-method'
             }
         );
         /** Add view logic here if needed */

@@ -24,12 +24,12 @@
                                                         <item name="renders" xsi:type="array">
                                                             <!-- merge payment method renders here -->
                                                             <item name="children" xsi:type="array">
-                                                                <item name="sample_gateway" xsi:type="array">
+                                                                <item name="esas_hutkigrosh-payments" xsi:type="array">
                                                                     <item name="component" xsi:type="string">
-                                                                        Magento_SamplePaymentGateway/js/view/payment/sample_gateway
+                                                                        Esas_Hutkigrosh/js/view/payment/hutkigrosh-payments
                                                                     </item>
                                                                     <item name="methods" xsi:type="array">
-                                                                        <item name="sample_gateway" xsi:type="array">
+                                                                        <item name="esas_hutkigrosh" xsi:type="array">
                                                                             <item name="isBillingAddressRequired"
                                                                                   xsi:type="boolean">true
                                                                             </item>

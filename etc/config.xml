@@ -9,13 +9,13 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <hutkigrosh_gateway>
+            <esas_hutkigrosh>
                 <debug>1</debug>
                 <active>0</active>
                 <title>Hutkigrosh</title>
-                <model>HutkigroshPaymentGatewayFacade</model>
+                <model>Esas\Hutkigrosh\Model\Method\Payment</model>
                 <order_status>pending_payment</order_status>
-                <hutkigrosh_shop_name>Your shop name</hutkigrosh_shop_name>
+                <hutkigrosh_shop_name>Magento2 shop</hutkigrosh_shop_name>
                 <hutkigrosh_hg_login/>
                 <hutkigrosh_hg_password/>
                 <hutkigrosh_erip_id/>
@@ -28,7 +28,7 @@
                 <hutkigrosh_bill_status_failed>pending_payment</hutkigrosh_bill_status_failed>
                 <hutkigrosh_bill_status_canceled>pending_payment</hutkigrosh_bill_status_canceled>
                 <sort_order>1</sort_order>
-            </hutkigrosh_gateway>
+            </esas_hutkigrosh>
         </payment>
     </default>
 </config>
