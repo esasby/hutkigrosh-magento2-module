@@ -17,8 +17,20 @@ define(
                 transactionResult: ''
             },
 
+            getCode: function () {
+                return 'esas_hutkigrosh';
+            },
+
+            isActive: function () {
+                return true;
+            },
+
             getMethodDescription: function () {
                 return window.checkoutConfig.payment.esas_hutkigrosh.hutkigrosh_payment_method_description;
+            },
+
+            addBill: function () {
+                return 'jjjj';
             }
         });
     }

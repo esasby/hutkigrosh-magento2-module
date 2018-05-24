@@ -65,10 +65,12 @@
                         <field id="active">1</field>
                     </depends>
                 </field>
-                <field id="hutkigrosh_hg_password" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1"
+                <field id="hutkigrosh_hg_password" type="obscure" translate="label" sortOrder="30" showInDefault="1"
+                       showInWebsite="1"
                        showInStore="0">
                     <label>Hutkigrosh password</label>
                     <config_path>payment/esas_hutkigrosh/hutkigrosh_hg_password</config_path>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                     <validate>required-entry</validate>
                     <can_be_empty>0</can_be_empty>
                     <depends>
