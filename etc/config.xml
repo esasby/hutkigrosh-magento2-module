@@ -11,10 +11,18 @@
         <payment>
             <esas_hutkigrosh>
                 <debug>1</debug>
-                <active>0</active>
+                <active>1</active>
                 <title>Hutkigrosh</title>
-                <model>Esas\Hutkigrosh\Model\Method\Payment</model>
+                <model>HutkigroshGatewayFacade</model>
                 <order_status>pending_payment</order_status>
+                <can_authorize>0</can_authorize>
+                <can_capture>0</can_capture>
+                <can_void>0</can_void>
+                <can_order>1</can_order>
+                <payment_action>order</payment_action>
+                <can_use_checkout>1</can_use_checkout>
+                <can_use_internal>1</can_use_internal>
+                <is_gateway>1</is_gateway>
                 <hutkigrosh_shop_name>Magento2 shop</hutkigrosh_shop_name>
                 <hutkigrosh_hg_login/>
                 <hutkigrosh_hg_password/>

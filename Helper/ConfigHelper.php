@@ -6,6 +6,7 @@ use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Encryption\EncryptorInterface;
+use esas\hutkigrosh\wrappers\ConfigurationWrapper;
 
 class ConfigHelper extends AbstractHelper
 {
@@ -30,50 +31,33 @@ class ConfigHelper extends AbstractHelper
     /*
      * @return bool
      */
-    public function isEnabled($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function isEnabled()
     {
-        return $this->scopeConfig->isSetFlag(
-            'payment/esas_hutkigrosh/active',
-            $scope
-        );
+        return $this->getConfigData('active', true);
     }
 
     /*
      * @return string
      */
-    public function getTitle($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getTitle()
     {
-        return $this->scopeConfig->getValue(
-            'payment/esas_hutkigrosh/title',
-            $scope
-        );
+        return $this->getConfigData('title');
     }
 
-    /*
-     * @return string
-     */
-    public function getPaymentMethodDescription($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getConfigData($field, $flag = false)
     {
-        return $this->scopeConfig->getValue(
-            'payment/esas_hutkigrosh/hutkigrosh_payment_method_description',
-            $scope
-        );
+        $path = 'payment/' . \Esas\Hutkigrosh\Model\Config\ConfigProvider::CODE . '/' . $field;
+        if (!$flag) {
+            return $this->scopeConfig->getValue($path, ScopeConfigInterface::SCOPE_TYPE_DEFAULT);
+        } else {
+            return $this->scopeConfig->isSetFlag($path, ScopeConfigInterface::SCOPE_TYPE_DEFAULT);
+        }
     }
 
-
-    /*
-     * @return string
-     */
-    public function getHGPassword($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getSecretConfigData($field)
     {
-        $secret = $this->scopeConfig->getValue(
-            '\'payment/esas_hutkigrosh/hutkigrosh_hg_password',
-            $scope
-        );
-        $secret = $this->encryptor->decrypt($secret);
-
-        return $secret;
+        $path = 'payment/' . \Esas\Hutkigrosh\Model\Config\ConfigProvider::CODE . '/' . $field;
+        $secret = $this->scopeConfig->getValue($path, ScopeConfigInterface::SCOPE_TYPE_DEFAULT);
+        return $this->encryptor->decrypt($secret);
     }
-
-
 }

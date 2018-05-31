@@ -8,7 +8,7 @@
 
 namespace Esas\Hutkigrosh\Model\Config;
 
-use \Esas\Hutkigrosh\Helper\ConfigHelper;
+use \Esas\Hutkigrosh\Helper\ConfigWrapper;
 
 /**
  * Class ConfigProvider передается через DI в
@@ -16,12 +16,15 @@ use \Esas\Hutkigrosh\Helper\ConfigHelper;
  */
 class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
+    const CODE = 'esas_hutkigrosh';
+    private $configWrapper;
+
     /**
      * ConfigProvider constructor.
      */
-    public function __construct(ConfigHelper $configHelper)
+    public function __construct(ConfigWrapper $configWrapper)
     {
-        $this->configHelper = $configHelper;
+        $this->configWrapper = $configWrapper;
     }
 
 
@@ -32,7 +35,7 @@ class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
      */
     public function getConfig()
     {
-        $config['payment']['esas_hutkigrosh']['hutkigrosh_payment_method_description'] = $this->configHelper->getPaymentMethodDescription();
+        $config['payment']['esas_hutkigrosh']['hutkigrosh_payment_method_description'] = $this->configWrapper->getPaymentMethodDescription();
         return $config;
     }
 }
